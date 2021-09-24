@@ -26,7 +26,7 @@ class SocketService {
     constructor(_platformId) {
         this._platformId = _platformId;
         if ((0,_angular_common__WEBPACK_IMPORTED_MODULE_1__.isPlatformBrowser)(this._platformId)) {
-            this.socket = (0,socket_io_client__WEBPACK_IMPORTED_MODULE_0__.io)("http://localhost:3000/");
+            this.socket = (0,socket_io_client__WEBPACK_IMPORTED_MODULE_0__.io)("https://stocks-socket-server.herokuapp.com/");
         }
     }
     startSending() {

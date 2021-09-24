@@ -8,9 +8,9 @@ import { Store } from '@ngrx/store';
 import { Observable } from 'rxjs';
 import { selectParamTicker } from 'src/app/store/router/router.selectors';
 import { ChartOptions } from 'chart.js';
-import { Color } from 'ng2-charts';
+import { Color, Label } from 'ng2-charts';
 import { selectFeatureStockHistory } from '../../store/stocks/stocks.selectors';
-import { withLatestFrom, map, filter } from 'rxjs/operators';
+import { withLatestFrom, map, filter, tap } from 'rxjs/operators';
 import { DatePipe, isPlatformBrowser } from '@angular/common';
 import { StocksHistory } from '../../models/stock';
 
@@ -52,10 +52,9 @@ export class StocksItemComponent {
   lineChartLabels$ = this.history$
     .pipe(
       map( historyArray => {
-        return historyArray.map((historyItem) =>
-          this.datePipe.transform(historyItem.last_trade_time, 'h:mm:ss a')
+        return historyArray.map((historyItem) => this.datePipe.transform(historyItem.last_trade_time, 'h:mm:ss a')!
         );
-      })
+      }),
     );
 
   lineChartColors: Color[] = [
@@ -78,3 +77,5 @@ export class StocksItemComponent {
     @Inject(PLATFORM_ID) private readonly _platformId: Object
     ) {}
 }
+
+

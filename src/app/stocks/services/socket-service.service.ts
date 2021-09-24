@@ -16,7 +16,7 @@ export class SocketService {
     @Inject(PLATFORM_ID) private readonly _platformId: Object,
     ) {
       if(isPlatformBrowser(this._platformId)){
-        this.socket = io("http://localhost:3000/")
+        this.socket = io("https://stocks-socket-server.herokuapp.com/")
       }
      }
 
