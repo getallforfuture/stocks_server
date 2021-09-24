@@ -3,6 +3,9 @@
   "version": "1.0.0",
   "description": "Push JSON prices in real-time over websockets",
   "main": "server.js",
+  "engines": {
+    "node": "v12.14.1"
+  },
   "dependencies": {
     "cors": "^2.8.5",
     "express": "^4.17.1",
