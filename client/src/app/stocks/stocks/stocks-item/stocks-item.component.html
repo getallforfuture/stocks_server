@@ -1,0 +1,14 @@
+<div class="container">
+    <h1>Statistic: {{routerParam$ | async}}</h1>
+    <div class="chart-wrapper">
+        <canvas baseChart 
+            [datasets]="(lineChartData$ | async)!" 
+            [labels]="(lineChartLabels$ | async)!" 
+            [options]="lineChartOptions"
+            [colors]="lineChartColors" 
+            [legend]="true" 
+            chartType="line" 
+            [plugins]="[]">
+        </canvas>
+    </div>
+</div>
