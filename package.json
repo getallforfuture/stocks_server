@@ -8,7 +8,7 @@
     "watch": "ng build --watch --configuration development",
     "test": "ng test",
     "dev:ssr": "ng run client:serve-ssr",
-    "serve:ssr": "node dist-server/main.js",
+    "serve:ssr": "node dist/client/server/main.js",
     "build:ssr": "ng build && ng run client:server:production",
     "prerender": "ng run client:prerender",
     "start:heroku": "node dist-server/main",
