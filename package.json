@@ -11,7 +11,7 @@
     "serve:ssr": "node dist-server/main.js",
     "build:ssr": "ng build && ng run client:server",
     "prerender": "ng run client:prerender",
-    "start:heroku": "node dist-server",
+    "start:heroku": "node dist-server/main",
     "postinstall": "npm run build:ssr"
   },
   "private": true,
